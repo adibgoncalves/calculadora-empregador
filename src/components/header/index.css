@@ -1,0 +1,23 @@
+.navbar {
+    height: 82px;
+    background-color: #F6BB3D;
+    margin-bottom: 50px;
+}
+
+.navbar .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .header-content .line-divisor {
+    background-color: #FFFFFF;
+    height: 62px;
+    width: 2px;
+}
+
+.navbar .header-content h1 {
+    color: #FFFFFF;
+    margin-left: 15px;
+    font-size: 20px;
+}
