@@ -12,7 +12,7 @@ function Contrato() {
         <h2>Contrato</h2>
         <Form className=''>
           <Form.Label className='h5'>Selecione a função</Form.Label>
-          <Form.Select aria-label="Selecionar função" value={tipoFucao} onChange={(e) => {
+          <Form.Select aria-label="Selecionar função" onChange={(e) => {
             if(e.target.value === "1"){
               setValor(9.60 * 220)
             }else if(e.target.value === "2") {
