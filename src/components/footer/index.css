@@ -1,0 +1,23 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    background-color: #F6BB3D;
+    display: flex;
+    align-items: center;
+}
+
+footer .footer-content {
+    display: flex;
+    align-items: center;
+}
+
+footer img {
+    width: 60px;
+}
+
+footer span {
+    color: #FFFFFF;
+    margin-left: 10px;
+}

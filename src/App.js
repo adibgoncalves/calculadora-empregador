@@ -2,16 +2,18 @@ import React, {useState} from 'react';
 
 import './App.css';
 import Header from './components/header';
+import Footer from './components/footer';
 import Clt from './components/clt';
 import Contrato from './components/contrato';
 import Form from 'react-bootstrap/Form';
+import Animation from '../src/assets/calculator.png'
 
 function App() {
   const [tipoCalculo, setTipoCalculo] = useState();
 
   return (
     <>
-    <Header></Header>
+    <Header />
     <div className="App">
       <div className='container'>
         <div className='type-calc-select'>
@@ -27,11 +29,16 @@ function App() {
           </Form>
         </div>
         <div className='calculation-area'>
-          {tipoCalculo === "1" ? <Contrato/> : tipoCalculo === "2" ? <Clt/> : 'Selecione um tipo de cálculo'}
-          
+          {tipoCalculo === "1" ? <Contrato/> : tipoCalculo === "2" ? <Clt/> : 
+            <div className='illustration'>
+              <h4>Nenhum tipo de cálculo foi selecionado</h4>
+              <span>Selecione um tipo para calcular</span>
+              <img src={Animation} alt="Ilustração" />
+            </div>}
         </div>
       </div>
     </div>
+    <Footer />
     </>
   );
 }
