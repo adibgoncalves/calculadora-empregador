@@ -6,10 +6,6 @@ import Table from 'react-bootstrap/Table';
 
 function Clt() {
   const [salarioMensal, setSalarioMensal] = useState(0)
-  const [planoSaude, setPlanoSaude] = useState(0)
-  const [valeTransporte, setValeTransporte] = useState(0)
-  const [valeRefeicao, setValeRefeicao] = useState(0)
-  const [outrosBeneficios, setOutrosBeneficios] = useState(0)
 
   const [a1, setA1] = useState(0)
   const [a2, setA2] = useState(0)
@@ -30,15 +26,38 @@ function Clt() {
   const [b7, setB7] = useState(0)
   const [bGeral, setBGeral] = useState(0)
 
+  const [c1, setC1] = useState(0)
+  const [c2, setC2] = useState(0)
+  const [c3, setC3] = useState(0)
+  const [cGeral, setCGeral] = useState(0)
+
+  const [d1, setD1] = useState(0)
+  const [d2, setD2] = useState(0)
+  const [d3, setD3] = useState(0)
+  const [d4, setD4] = useState(0)
+  const [d5, setD5] = useState(0)
+  const [dGeral, setDGeral] = useState(0)
+
+  const [subTotalSocial, setSubTotalSocial] = useState(0)
+
+  const [e1, setE1] = useState(0)
+  const [e2, setE2] = useState(0)
+  const [e3, setE3] = useState(0)
+  const [e4, setE4] = useState(0)
+  const [e5, setE5] = useState(0)
+  const [eGeral, setEGeral] = useState(0)
+
+  const [totalSocial, setTotalSocial] = useState(0)
+
   const calcular = () => {
-    setA1(salarioMensal * 0.20)
-    setA2(salarioMensal * 0.08)
-    setA3(salarioMensal * 0.03)
-    setA4(salarioMensal * 0.025)
-    setA5(salarioMensal * 0.015)
-    setA6(salarioMensal * 0.01)
-    setA7(salarioMensal * 0.006)
-    setA8(salarioMensal * 0.002)
+    setA1((salarioMensal * 0.20).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setA2((salarioMensal * 0.08).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setA3((salarioMensal * 0.03).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setA4((salarioMensal * 0.025).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setA5((salarioMensal * 0.015).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setA6((salarioMensal * 0.01).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setA7((salarioMensal * 0.006).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setA8((salarioMensal * 0.002).toLocaleString('pt-br', {minimumFractionDigits: 2}))
 
     setAGeral((salarioMensal * 0.20) 
       + (salarioMensal * 0.08)
@@ -50,13 +69,13 @@ function Clt() {
       + (salarioMensal * 0.002)
     )
 
-    setB1(salarioMensal * 0.2277)
-    setB2(salarioMensal * 0.1492)
-    setB3(salarioMensal * 0.1120)
-    setB4(salarioMensal * 0.006)
-    setB5(salarioMensal * 0.0011)
-    setB6(salarioMensal * 0.009)
-    setB7(salarioMensal * 0.0075)
+    setB1((salarioMensal * 0.2277).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setB2((salarioMensal * 0.1492).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setB3((salarioMensal * 0.1120).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setB4((salarioMensal * 0.006).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setB5((salarioMensal * 0.0011).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setB6((salarioMensal * 0.009).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setB7((salarioMensal * 0.0075).toLocaleString('pt-br', {minimumFractionDigits: 2}))
 
     setBGeral((salarioMensal * 0.2277) 
       + (salarioMensal * 0.1492)
@@ -66,39 +85,58 @@ function Clt() {
       + (salarioMensal * 0.009)
       + (salarioMensal * 0.0075)
     )
+
+    setC1((salarioMensal * 0.1176).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setC2((salarioMensal * 0.0537).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setC3((salarioMensal * 0.0116).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+
+    setCGeral((salarioMensal * 0.1176) 
+      + (salarioMensal * 0.0537)
+      + (salarioMensal * 0.0116)
+    )
+
+    setD1((salarioMensal * 0.1886).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setD2((salarioMensal * 0.0024).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setD3((salarioMensal * 0.0089).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setD4((salarioMensal * 0.0009).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setD5((salarioMensal * 0.0307).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+
+    setDGeral((salarioMensal * 0.1886) 
+      + (salarioMensal * 0.0024)
+      + (salarioMensal * 0.0089) 
+      + (salarioMensal * 0.0009) 
+      + (salarioMensal * 0.0307)
+    )
+
+    setSubTotalSocial(salarioMensal * 1.295)
+
+    setE1((salarioMensal * 0.2303).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setE2((salarioMensal * 0.1596).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setE3((salarioMensal * 0.0371).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setE4((salarioMensal * 0.0068).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setE5((salarioMensal * 0.0023).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+
+    setEGeral((salarioMensal * 0.2303) 
+      + (salarioMensal * 0.1596)
+      + (salarioMensal * 0.0371) 
+      + (salarioMensal * 0.0068) 
+      + (salarioMensal * 0.0023)
+    )
+
+    setTotalSocial(salarioMensal * 1.731)
   }
 
   return (
     <>
-    <p>CLT</p>
       <div className='container'>
-        <Form className='row'>
+        <h2>CLT</h2>
+        <Form>
           <Form.Group className="mb-3 col-6" controlId="formSalarioMensal">
             <Form.Label className='h5'>Salário mensal</Form.Label>
-            <Form.Control onChange={(e) => {setSalarioMensal(e.target.value)}} value={salarioMensal} className='form-control-lg' type="number" placeholder="Valor salário mensal" />
+            <Form.Control onChange={(e) => {setSalarioMensal(e.target.value)}} value={salarioMensal} className='form-control' type="number" placeholder="Valor salário mensal" />
           </Form.Group>
 
-          <Form.Group className="mb-3 col-6" controlId="formPlanoSaude">
-            <Form.Label className='h5'>Plano de saúde (valor mensal)</Form.Label>
-            <Form.Control onChange={(e) => {setPlanoSaude(e.target.value)}} value={planoSaude} className='form-control-lg' type="number" placeholder="Valor plano de saúde" />
-          </Form.Group>
-
-          <Form.Group className="mb-3 col-6" controlId="formValeTransporte">
-            <Form.Label className='h5'>Vale transporte (valor mensal)</Form.Label>
-            <Form.Control onChange={(e) => {setValeTransporte(e.target.value)}} value={valeTransporte} className='form-control-lg' type="number" placeholder="Valor vale transporte" />
-          </Form.Group>
-
-          <Form.Group className="mb-3 col-6" controlId="formValeRefeicao">
-            <Form.Label className='h5'>Vale refeição (valor mensal)</Form.Label>
-            <Form.Control onChange={(e) => {setValeRefeicao(e.target.value)}} value={valeRefeicao} className='form-control-lg' type="number" placeholder="Valor vale refeição" />
-          </Form.Group>
-
-          <Form.Group className="mb-3 col-6" controlId="formOutrosBeneficios">
-            <Form.Label className='h5'>Outros benefícios</Form.Label>
-            <Form.Control onChange={(e) => {setOutrosBeneficios(e.target.value)}} value={outrosBeneficios} className='form-control-lg' type="number" placeholder="Valor outros benefícios" />
-          </Form.Group>
-
-          <Button variant="primary" onClick={calcular} className='btn-lg mt-3'>
+          <Button variant="primary" onClick={calcular} className='btn mt-3'>
             Calcular
           </Button>
         </Form>
@@ -114,7 +152,7 @@ function Clt() {
           <thead>
             <tr>
               <th>Descrição</th>
-              <th>Prcentagem</th>
+              <th>Porcentagem</th>
               <th>Valor</th>
             </tr>
           </thead>
@@ -162,7 +200,7 @@ function Clt() {
             <tr>
               <td><strong>Total de encargos</strong></td>
               <td><strong>36,80%</strong></td>
-              <td><strong>R$ {aGeral}</strong></td>
+              <td><strong>R$ {aGeral.toLocaleString('pt-br', {minimumFractionDigits: 2})}</strong></td>
             </tr>
           </tbody>
         </Table>
@@ -174,7 +212,7 @@ function Clt() {
           <thead>
             <tr>
               <th>Descrição</th>
-              <th>Prcentagem</th>
+              <th>Porcentagem</th>
               <th>Valor</th>
             </tr>
           </thead>
@@ -217,7 +255,7 @@ function Clt() {
             <tr>
               <td><strong>Total de encargos</strong></td>
               <td><strong>51,24</strong></td>
-              <td><strong>R$ {bGeral}</strong></td>
+              <td><strong>R$ {bGeral.toLocaleString('pt-br', {minimumFractionDigits: 2})}</strong></td>
             </tr>
           </tbody>
         </Table>
@@ -229,7 +267,7 @@ function Clt() {
           <thead>
             <tr>
               <th>Descrição</th>
-              <th>Prcentagem</th>
+              <th>Porcentagem</th>
               <th>Valor</th>
             </tr>
           </thead>
@@ -237,22 +275,22 @@ function Clt() {
             <tr>
               <td>Aviso-Prévio Indenizado</td>
               <td>11,76%</td>
-              <td>R$ </td>
+              <td>R$ {c1}</td>
             </tr>
             <tr>
               <td>Multa por rescisão de contrato de trabalho</td>
               <td>5,37%</td>
-              <td>R$ </td>
+              <td>R$ {c2}</td>
             </tr>
             <tr>
               <td>Indenização Adicional</td>
               <td>1,16%</td>
-              <td>R$ </td>
+              <td>R$ {c3}</td>
             </tr>
             <tr>
               <td><strong>Total de encargos</strong></td>
               <td><strong>18,30%</strong></td>
-              <td><strong>R$ </strong></td>
+              <td><strong>R$ {cGeral.toLocaleString('pt-br', {minimumFractionDigits: 2})}</strong></td>
             </tr>
           </tbody>
         </Table>
@@ -264,7 +302,7 @@ function Clt() {
           <thead>
             <tr>
               <th>Descrição</th>
-              <th>Prcentagem</th>
+              <th>Porcentagem</th>
               <th>Valor</th>
             </tr>
           </thead>
@@ -272,32 +310,114 @@ function Clt() {
             <tr>
               <td>Incidência dos Encargos Básicos sobre os encargos Trabalhistas</td>
               <td>18,86%</td>
-              <td>R$ </td>
+              <td>R$ {d1}</td>
             </tr>
             <tr>
               <td>Incidências dos Encargos Sociais Básicos sobre o Aviso Prévio Trabalhado</td>
-              <td>0,14%</td>
-              <td>R$ </td>
+              <td>0,24%</td>
+              <td>R$ {d2}</td>
             </tr>
             <tr>
               <td>Incidência do FGTS sobre o aviso Prévio Indenizado</td>
               <td>0,89%</td>
-              <td>R$ </td>
+              <td>R$ {d3}</td>
             </tr>
             <tr>
               <td>Incidência do FGTS sobre Indenização Adicional</td>
               <td>0,09%</td>
-              <td>R$ </td>
+              <td>R$ {d4}</td>
             </tr>
             <tr>
               <td>Efeitos do Aviso Prévio</td>
               <td>3,07%</td>
-              <td>R$ </td>
+              <td>R$ {d5}</td>
             </tr>
             <tr>
               <td><strong>Total de encargos</strong></td>
               <td><strong>23,15%</strong></td>
-              <td><strong>R$ </strong></td>
+              <td><strong>R$ {dGeral.toLocaleString('pt-br', {minimumFractionDigits: 2})}</strong></td>
+            </tr>
+          </tbody>
+        </Table>
+        <div>
+          <h4>Sub total de encargos sociais</h4>
+        </div>
+        <Table striped bordered hover className='mb-5'>
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Porcentagem</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Sub total de encargos sociais</strong></td>
+              <td><strong>129,5%</strong></td>
+              <td><strong>R$ {subTotalSocial.toLocaleString('pt-br', {minimumFractionDigits: 2})}</strong></td>
+            </tr>
+          </tbody>
+        </Table>
+        <div>
+          <h4>Encargos Intersindicais</h4>
+        </div>
+        <Table striped bordered hover className='mb-5'>
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Porcentagem</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Alimentação (Almoço e Café da Manhã)</td>
+              <td>23,03%</td>
+              <td>R$ {e1}</td>
+            </tr>
+            <tr>
+              <td>Vale Transporte</td>
+              <td>15,96%</td>
+              <td>R$ {e2}</td>
+            </tr>
+            <tr>
+              <td>Equipamento de Proteção Individual (EPI) e Fardamento</td>
+              <td>3,71%</td>
+              <td>R$ {e3}</td>
+            </tr>
+            <tr>
+              <td>Exame Médico Admissional e Demissional</td>
+              <td>0,68%</td>
+              <td>R$ {e4}</td>
+            </tr>
+            <tr>
+              <td>Seguro de Vida em Grupo</td>
+              <td>0,23%</td>
+              <td>R$ {e5}</td>
+            </tr>
+            <tr>
+              <td><strong>Total de encargos</strong></td>
+              <td><strong>43,6%</strong></td>
+              <td><strong>R$ {eGeral.toLocaleString('pt-br', {minimumFractionDigits: 2})}</strong></td>
+            </tr>
+          </tbody>
+        </Table>
+        <div>
+          <h4>Total geral dos encargos sociais</h4>
+        </div>
+        <Table striped bordered hover className='mb-5'>
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Porcentagem</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Total geral dos encargos sociais</strong></td>
+              <td><strong>173,1%</strong></td>
+              <td><strong>R$ {totalSocial.toLocaleString('pt-br', {minimumFractionDigits: 2})}</strong></td>
             </tr>
           </tbody>
         </Table>
