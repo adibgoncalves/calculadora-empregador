@@ -3,9 +3,11 @@ footer {
     bottom: 0;
     height: 40px;
     width: 100%;
-    background-color: #F6BB3D;
+    background-color: #FFFFFF;
     display: flex;
     align-items: center;
+    border-top: solid;
+    border-color: #F6BB3D;
 }
 
 footer .footer-content {
@@ -18,7 +20,7 @@ footer img {
 }
 
 footer span {
-    color: #FFFFFF;
+    color: #000000;
     margin-left: 10px;
     font-size: 12px;
     text-align: center;
