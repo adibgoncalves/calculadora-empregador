@@ -1,15 +1,15 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
-import LogoiWof from '../../assets/Logo-iWof.png'
-import './index.css'
+import LogoFbc from '../../assets/fbc-logo.jpeg';
+import './index.css';
 
 function Footer() {
   return (
     <footer>
         <Container>
             <div className='footer-content'>
-                <img src={LogoiWof} alt="Logo iWof"/>
-                <span>Copyright © iWolf 2022</span>
+                <img src={LogoFbc} alt="Logo iWof"/>
+                <span>Copyright © FBC Finanças 2022 | Desenvolvido por FBC Finanças</span>
             </div>
         </Container>
     </footer>
