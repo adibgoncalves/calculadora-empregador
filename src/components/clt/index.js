@@ -48,6 +48,7 @@ function Clt() {
   const [eGeral, setEGeral] = useState(0)
 
   const [totalSocial, setTotalSocial] = useState(0)
+  const [totalEncargosSalario, setTotalEncargosSalario] = useState(0)
 
   const calcular = () => {
     setA1((salarioMensal * 0.20).toLocaleString('pt-br', {minimumFractionDigits: 2}))
@@ -254,7 +255,7 @@ function Clt() {
             </tr>
             <tr>
               <td><strong>Total de encargos</strong></td>
-              <td><strong>51,24</strong></td>
+              <td><strong>51,24%</strong></td>
               <td><strong>R$ {bGeral.toLocaleString('pt-br', {minimumFractionDigits: 2})}</strong></td>
             </tr>
           </tbody>
@@ -419,6 +420,23 @@ function Clt() {
               <td><strong>173,1%</strong></td>
               <td><strong>R$ {totalSocial.toLocaleString('pt-br', {minimumFractionDigits: 2})}</strong></td>
             </tr>
+          </tbody>
+        </Table>
+        <div>
+          <h4>Custo final</h4>
+        </div>
+        <Table striped bordered hover className='mb-5'>
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><strong>Custo final (encargos + salários)</strong></td>
+            <td><strong>R$ {(parseInt(salarioMensal)+totalSocial).toLocaleString('pt-br', {minimumFractionDigits: 2})}</strong></td>
+          </tr>
           </tbody>
         </Table>
       </div>
