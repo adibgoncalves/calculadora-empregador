@@ -48,17 +48,20 @@ function Clt() {
   const [eGeral, setEGeral] = useState(0)
 
   const [totalSocial, setTotalSocial] = useState(0)
-  const [totalEncargosSalario, setTotalEncargosSalario] = useState(0)
+
+  const ajusteValor = (valor) => {
+    return valor.toLocaleString('pt-br', {maximumFractionDigits: 2, minimumFractionDigits: 2})
+  }
 
   const calcular = () => {
-    setA1((salarioMensal * 0.20).toLocaleString('pt-br', {minimumFractionDigits: 2}))
-    setA2((salarioMensal * 0.08).toLocaleString('pt-br', {minimumFractionDigits: 2}))
-    setA3((salarioMensal * 0.03).toLocaleString('pt-br', {minimumFractionDigits: 2}))
-    setA4((salarioMensal * 0.025).toLocaleString('pt-br', {minimumFractionDigits: 2}))
-    setA5((salarioMensal * 0.015).toLocaleString('pt-br', {minimumFractionDigits: 2}))
-    setA6((salarioMensal * 0.01).toLocaleString('pt-br', {minimumFractionDigits: 2}))
-    setA7((salarioMensal * 0.006).toLocaleString('pt-br', {minimumFractionDigits: 2}))
-    setA8((salarioMensal * 0.002).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setA1(ajusteValor(salarioMensal * 0.20))
+    setA2(ajusteValor(salarioMensal * 0.08))
+    setA3(ajusteValor(salarioMensal * 0.03))
+    setA4(ajusteValor(salarioMensal * 0.025))
+    setA5(ajusteValor(salarioMensal * 0.015))
+    setA6(ajusteValor(salarioMensal * 0.01))
+    setA7(ajusteValor(salarioMensal * 0.006))
+    setA8(ajusteValor(salarioMensal * 0.002))
 
     setAGeral((salarioMensal * 0.20) 
       + (salarioMensal * 0.08)
@@ -70,13 +73,13 @@ function Clt() {
       + (salarioMensal * 0.002)
     )
 
-    setB1((salarioMensal * 0.2277).toLocaleString('pt-br', {minimumFractionDigits: 2}))
-    setB2((salarioMensal * 0.1492).toLocaleString('pt-br', {minimumFractionDigits: 2}))
-    setB3((salarioMensal * 0.1120).toLocaleString('pt-br', {minimumFractionDigits: 2}))
-    setB4((salarioMensal * 0.006).toLocaleString('pt-br', {minimumFractionDigits: 2}))
-    setB5((salarioMensal * 0.0011).toLocaleString('pt-br', {minimumFractionDigits: 2}))
-    setB6((salarioMensal * 0.009).toLocaleString('pt-br', {minimumFractionDigits: 2}))
-    setB7((salarioMensal * 0.0075).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setB1(ajusteValor(salarioMensal * 0.2277))
+    setB2(ajusteValor(salarioMensal * 0.1492))
+    setB3(ajusteValor(salarioMensal * 0.1120))
+    setB4(ajusteValor(salarioMensal * 0.006))
+    setB5(ajusteValor(salarioMensal * 0.0011))
+    setB6(ajusteValor(salarioMensal * 0.009))
+    setB7(ajusteValor(salarioMensal * 0.0075))
 
     setBGeral((salarioMensal * 0.2277) 
       + (salarioMensal * 0.1492)
@@ -87,20 +90,20 @@ function Clt() {
       + (salarioMensal * 0.0075)
     )
 
-    setC1((salarioMensal * 0.1176).toLocaleString('pt-br', {minimumFractionDigits: 2}))
-    setC2((salarioMensal * 0.0537).toLocaleString('pt-br', {minimumFractionDigits: 2}))
-    setC3((salarioMensal * 0.0116).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setC1(ajusteValor(salarioMensal * 0.1176))
+    setC2(ajusteValor(salarioMensal * 0.0537))
+    setC3(ajusteValor(salarioMensal * 0.0116))
 
     setCGeral((salarioMensal * 0.1176) 
       + (salarioMensal * 0.0537)
       + (salarioMensal * 0.0116)
     )
 
-    setD1((salarioMensal * 0.1886).toLocaleString('pt-br', {minimumFractionDigits: 2}))
-    setD2((salarioMensal * 0.0024).toLocaleString('pt-br', {minimumFractionDigits: 2}))
-    setD3((salarioMensal * 0.0089).toLocaleString('pt-br', {minimumFractionDigits: 2}))
-    setD4((salarioMensal * 0.0009).toLocaleString('pt-br', {minimumFractionDigits: 2}))
-    setD5((salarioMensal * 0.0307).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setD1(ajusteValor(salarioMensal * 0.1886))
+    setD2(ajusteValor(salarioMensal * 0.0024))
+    setD3(ajusteValor(salarioMensal * 0.0089))
+    setD4(ajusteValor(salarioMensal * 0.0009))
+    setD5(ajusteValor(salarioMensal * 0.0307))
 
     setDGeral((salarioMensal * 0.1886) 
       + (salarioMensal * 0.0024)
@@ -111,11 +114,11 @@ function Clt() {
 
     setSubTotalSocial(salarioMensal * 1.295)
 
-    setE1((salarioMensal * 0.2303).toLocaleString('pt-br', {minimumFractionDigits: 2}))
-    setE2((salarioMensal * 0.1596).toLocaleString('pt-br', {minimumFractionDigits: 2}))
-    setE3((salarioMensal * 0.0371).toLocaleString('pt-br', {minimumFractionDigits: 2}))
-    setE4((salarioMensal * 0.0068).toLocaleString('pt-br', {minimumFractionDigits: 2}))
-    setE5((salarioMensal * 0.0023).toLocaleString('pt-br', {minimumFractionDigits: 2}))
+    setE1(ajusteValor(salarioMensal * 0.2303))
+    setE2(ajusteValor(salarioMensal * 0.1596))
+    setE3(ajusteValor(salarioMensal * 0.0371))
+    setE4(ajusteValor(salarioMensal * 0.0068))
+    setE5(ajusteValor(salarioMensal * 0.0023))
 
     setEGeral((salarioMensal * 0.2303) 
       + (salarioMensal * 0.1596)
@@ -201,7 +204,7 @@ function Clt() {
             <tr>
               <td><strong>Total de encargos</strong></td>
               <td><strong>36,80%</strong></td>
-              <td><strong>R$ {aGeral.toLocaleString('pt-br', {minimumFractionDigits: 2})}</strong></td>
+              <td><strong>R$ {ajusteValor(aGeral)}</strong></td>
             </tr>
           </tbody>
         </Table>
@@ -256,7 +259,7 @@ function Clt() {
             <tr>
               <td><strong>Total de encargos</strong></td>
               <td><strong>51,24%</strong></td>
-              <td><strong>R$ {bGeral.toLocaleString('pt-br', {minimumFractionDigits: 2})}</strong></td>
+              <td><strong>R$ {ajusteValor(bGeral)}</strong></td>
             </tr>
           </tbody>
         </Table>
@@ -291,7 +294,7 @@ function Clt() {
             <tr>
               <td><strong>Total de encargos</strong></td>
               <td><strong>18,30%</strong></td>
-              <td><strong>R$ {cGeral.toLocaleString('pt-br', {minimumFractionDigits: 2})}</strong></td>
+              <td><strong>R$ {ajusteValor(cGeral)}</strong></td>
             </tr>
           </tbody>
         </Table>
@@ -336,7 +339,7 @@ function Clt() {
             <tr>
               <td><strong>Total de encargos</strong></td>
               <td><strong>23,15%</strong></td>
-              <td><strong>R$ {dGeral.toLocaleString('pt-br', {minimumFractionDigits: 2})}</strong></td>
+              <td><strong>R$ {ajusteValor(dGeral)}</strong></td>
             </tr>
           </tbody>
         </Table>
@@ -355,7 +358,7 @@ function Clt() {
             <tr>
               <td><strong>Sub total de encargos sociais</strong></td>
               <td><strong>129,5%</strong></td>
-              <td><strong>R$ {subTotalSocial.toLocaleString('pt-br', {minimumFractionDigits: 2})}</strong></td>
+              <td><strong>R$ {ajusteValor(subTotalSocial)}</strong></td>
             </tr>
           </tbody>
         </Table>
@@ -399,7 +402,7 @@ function Clt() {
             <tr>
               <td><strong>Total de encargos</strong></td>
               <td><strong>43,6%</strong></td>
-              <td><strong>R$ {eGeral.toLocaleString('pt-br', {minimumFractionDigits: 2})}</strong></td>
+              <td><strong>R$ {ajusteValor(eGeral)}</strong></td>
             </tr>
           </tbody>
         </Table>
@@ -418,7 +421,7 @@ function Clt() {
             <tr>
               <td><strong>Total geral dos encargos sociais</strong></td>
               <td><strong>173,1%</strong></td>
-              <td><strong>R$ {totalSocial.toLocaleString('pt-br', {minimumFractionDigits: 2})}</strong></td>
+              <td><strong>R$ {ajusteValor(totalSocial)}</strong></td>
             </tr>
           </tbody>
         </Table>
@@ -435,7 +438,7 @@ function Clt() {
           <tbody>
           <tr>
             <td><strong>Custo final (encargos + salários)</strong></td>
-            <td><strong>R$ {(parseInt(salarioMensal)+totalSocial).toLocaleString('pt-br', {minimumFractionDigits: 2})}</strong></td>
+            <td><strong>R$ {ajusteValor(parseInt(salarioMensal)+totalSocial)}</strong></td>
           </tr>
           </tbody>
         </Table>
