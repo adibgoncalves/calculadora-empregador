@@ -3,9 +3,12 @@ import React, {useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Table from 'react-bootstrap/Table';
+import { jsPDF } from "jspdf";
+import './index.css'
 
 function Clt() {
   const [salarioMensal, setSalarioMensal] = useState(0)
+  const [gerarArquivoPdf, setGerarArquivoPdf] = useState(false)
 
   const [a1, setA1] = useState(0)
   const [a2, setA2] = useState(0)
@@ -128,6 +131,221 @@ function Clt() {
     )
 
     setTotalSocial(salarioMensal * 1.731)
+
+    setGerarArquivoPdf(true)
+  }
+
+  const gerarPdf = () => {
+    const doc = new jsPDF('p', 'pt');
+    doc.text(`Estimativa dos custos do funcionário para a empresa`, 300, 20, { align: 'center'});
+
+    var headers = ['Descrição', 'Porcentagem', 'Valor']
+    var data = [
+      {
+        'Descrição': 'Encargos sociais básicos',
+        'Porcentagem': '',
+        'Valor': ''
+      },
+      {
+        'Descrição': 'Previdência Social - INSS',
+        'Porcentagem': '20%',
+        'Valor': a1
+      },
+      {
+        'Descrição': 'Fundo de Garantia por Tempo de Servicço - FGTS',
+        'Porcentagem': '8,00%',
+        'Valor': a2
+      },
+      {
+        'Descrição': 'Seguro contra Acidente de Trabalho - SAT',
+        'Porcentagem': '3,00%',
+        'Valor': a3
+      },
+      {
+        'Descrição': 'Salário Educação',
+        'Porcentagem': '2,50%',
+        'Valor': a4
+      },
+      {
+        'Descrição': 'Serviço Social da Indústria - SESI',
+        'Porcentagem': '1,50%',
+        'Valor': a5
+      },
+      {
+        'Descrição': 'Serviço Nacional de Aprendizagem Industrial - SENAI',
+        'Porcentagem': '1,00%',
+        'Valor': a6
+      },
+      {
+        'Descrição': 'Serviço de Apoio à Pequena e Média Empresa - SEBRAE',
+        'Porcentagem': '0,60%',
+        'Valor': a7
+      },
+      {
+        'Descrição': 'Instituto Nacional de Colonização e Reforma Agrária - INCRA',
+        'Porcentagem': '0,20%',
+        'Valor': a8
+      },
+      {
+        'Descrição': 'Encargos sociais trabalhistas',
+        'Porcentagem': '',
+        'Valor': ''
+      },
+      {
+        'Descrição': 'Repouso Semanal Remunerado e Refiados',
+        'Porcentagem': '22,77%',
+        'Valor': b1
+      },
+      {
+        'Descrição': 'Férias',
+        'Porcentagem': '14,92%',
+        'Valor': b2
+      },
+      {
+        'Descrição': '13º Salário',
+        'Porcentagem': '11,20%',
+        'Valor': b3
+      },
+      {
+        'Descrição': 'Auxílio-Enfermidade',
+        'Porcentagem': '0,60%',
+        'Valor': b4
+      },
+      {
+        'Descrição': 'Licença-Paternidade',
+        'Porcentagem': '0,11%',
+        'Valor': b5
+      },
+      {
+        'Descrição': 'Acidentes de Trabalho',
+        'Porcentagem': '0,90%',
+        'Valor': b6
+      },
+      {
+        'Descrição': 'Faltas Justificadas',
+        'Porcentagem': '0,75%',
+        'Valor': b7
+      },
+      {
+        'Descrição': 'Encargos sociais indenizatórios',
+        'Porcentagem': '',
+        'Valor': ''
+      },
+      {
+        'Descrição': 'Aviso-Prévio Indenizado',
+        'Porcentagem': '11,76%',
+        'Valor': c1
+      },
+      {
+        'Descrição': 'Multa por rescisão de contrato de trabalho',
+        'Porcentagem': '5,37%',
+        'Valor': c2
+      },
+      {
+        'Descrição': 'Indenização Adicional',
+        'Porcentagem': '1,16%',
+        'Valor': c3
+      },
+      {
+        'Descrição': 'Encargos sociais cumulativas',
+        'Porcentagem': '',
+        'Valor': ''
+      },
+      {
+        'Descrição': 'Incidência dos Encargos Básicos sobre os encargos Trabalhistas',
+        'Porcentagem': '18,86%',
+        'Valor': d1
+      },
+      {
+        'Descrição': 'Incidências dos Encargos Sociais Básicos sobre o Aviso Prévio Trabalhado',
+        'Porcentagem': '0,24%',
+        'Valor': d2
+      },
+      {
+        'Descrição': 'Incidência do FGTS sobre o aviso Prévio Indenizado',
+        'Porcentagem': '0,89%',
+        'Valor': d3
+      },
+      {
+        'Descrição': 'Incidência do FGTS sobre Indenização Adicional',
+        'Porcentagem': '0,09%',
+        'Valor': d4
+      },
+      {
+        'Descrição': 'Efeitos do Aviso Prévio',
+        'Porcentagem': '3,07%',
+        'Valor': d5
+      },
+      {
+        'Descrição': 'Sub total de encargos sociais',
+        'Porcentagem': '',
+        'Valor': ''
+      },
+      {
+        'Descrição': 'Sub total de encargos sociais',
+        'Porcentagem': '129,5%',
+        'Valor': `R$ ${ajusteValor(subTotalSocial)}`
+      },
+      {
+        'Descrição': 'Encargos Intersindicais',
+        'Porcentagem': '',
+        'Valor': ''
+      },
+      {
+        'Descrição': 'Alimentação (Almoço e Café da Manhã)',
+        'Porcentagem': '23,03%',
+        'Valor': e1
+      },
+      {
+        'Descrição': 'Vale Transporte',
+        'Porcentagem': '15,96%',
+        'Valor': e2
+      },
+      {
+        'Descrição': 'Equipamento de Proteção Individual (EPI) e Fardamento',
+        'Porcentagem': '3,71%',
+        'Valor': e3
+      },
+      {
+        'Descrição': 'Exame Médico Admissional e Demissional',
+        'Porcentagem': '0,68%',
+        'Valor': e4
+      },
+      {
+        'Descrição': 'Seguro de Vida em Grupo',
+        'Porcentagem': '0,23%',
+        'Valor': e5
+      },
+      {
+        'Descrição': 'Total geral dos encargos sociais',
+        'Porcentagem': '',
+        'Valor': ''
+      },
+      {
+        'Descrição': 'Total geral dos encargos sociais',
+        'Porcentagem': '173,1%',
+        'Valor': `R$ ${ajusteValor(totalSocial)}`
+      },
+      {
+        'Descrição': 'Custo final',
+        'Porcentagem': '',
+        'Valor': ''
+      },
+      {
+        'Descrição': 'Custo final (encargos + salários)',
+        'Porcentagem': '',
+        'Valor': `R$ ${ajusteValor(parseInt(salarioMensal)+totalSocial)}`
+      },
+    ]
+
+    var config = {
+      margins: {
+        top: 30
+      },
+      fontSize: 11
+    }
+    doc.table(40, 30, data, headers, config);
+    doc.save("calculo.pdf");
   }
 
   return (
@@ -143,6 +361,11 @@ function Clt() {
           <Button variant="primary" onClick={calcular} className='btn mt-3'>
             Calcular
           </Button>
+        { gerarArquivoPdf ? 
+          <Button variant="secondary" onClick={gerarPdf} className='btn mt-3 gerarPdf'>
+            Gerar PDF
+          </Button>
+        : ""}
         </Form>
 
         <div className='mt-5 mb-3'>
